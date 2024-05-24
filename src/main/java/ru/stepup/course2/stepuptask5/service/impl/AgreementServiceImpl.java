@@ -1,11 +1,12 @@
-package ru.stepup.course2.stepuptask5.service;
+package ru.stepup.course2.stepuptask5.service.impl;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import ru.stepup.course2.stepuptask5.DTO.AgreementDto;
+import ru.stepup.course2.stepuptask5.service.AgreementService;
+import ru.stepup.course2.stepuptask5.service.dto.AgreementDto;
 import ru.stepup.course2.stepuptask5.entity.Agreement;
-import ru.stepup.course2.stepuptask5.map.AgreementMapper;
+import ru.stepup.course2.stepuptask5.service.convertor.AgreementMapper;
 import ru.stepup.course2.stepuptask5.repository.AgreementRepository;
 
 import java.util.List;
@@ -25,7 +26,7 @@ public class AgreementServiceImpl implements AgreementService {
 
     @Override
     public AgreementDto findById(Long id) {
-        return Optional.of(getById(id).map(agreementMapper::modelToDto).get());
+        return Optional.of(getById(id)).map(agreementMapper::modelToDto).get();
     }
 
     @Override

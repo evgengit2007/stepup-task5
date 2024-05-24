@@ -1,4 +1,4 @@
-package ru.stepup.course2.stepuptask5.DTO;
+package ru.stepup.course2.stepuptask5.service.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

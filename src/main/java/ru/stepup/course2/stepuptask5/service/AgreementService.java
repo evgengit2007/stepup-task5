@@ -1,6 +1,6 @@
 package ru.stepup.course2.stepuptask5.service;
 
-import ru.stepup.course2.stepuptask5.DTO.AgreementDto;
+import ru.stepup.course2.stepuptask5.service.dto.AgreementDto;
 
 import java.util.List;
 

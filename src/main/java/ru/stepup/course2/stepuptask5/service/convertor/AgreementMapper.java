@@ -1,7 +1,7 @@
-package ru.stepup.course2.stepuptask5.map;
+package ru.stepup.course2.stepuptask5.service.convertor;
 
 import org.mapstruct.Mapper;
-import ru.stepup.course2.stepuptask5.DTO.AgreementDto;
+import ru.stepup.course2.stepuptask5.service.dto.AgreementDto;
 import ru.stepup.course2.stepuptask5.entity.Agreement;
 
 import java.util.List;
