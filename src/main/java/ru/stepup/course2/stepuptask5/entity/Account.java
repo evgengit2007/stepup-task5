@@ -1,8 +1,11 @@
 package ru.stepup.course2.stepuptask5.entity;
 
 import jakarta.persistence.*;
+import lombok.Data;
 
 @Entity
+@Data
+@Table(name = "account")
 public class Account {
     @Id
     @GeneratedValue
@@ -10,9 +13,9 @@ public class Account {
 
     @ManyToOne
     @JoinColumn(name = "account_pool_id")
-    private AccountPool accountPoolId;
+    private AccountPool account_pool_id;
 
-    private String accountNumber;
+    private String account_number;
     private Boolean bussy;
 
 }

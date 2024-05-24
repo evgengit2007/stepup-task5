@@ -1,20 +1,20 @@
 package ru.stepup.course2.stepuptask5.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+import lombok.Data;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
+@Data
+@Table(name = "tpp_ref_account_type")
 public class TppRefAccountType {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    @Id
-    @GeneratedValue
-    public Long getId() {
-        return id;
-    }
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+//    @JoinColumn(name = "account_type")
+    List<TppRefProductRegisterType> tppRefProductRegisterTypeList = new ArrayList<>();
 }

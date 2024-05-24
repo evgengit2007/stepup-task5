@@ -1,11 +1,14 @@
 package ru.stepup.course2.stepuptask5.entity;
 
 import jakarta.persistence.*;
+import lombok.Data;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @Entity
+@Data
+@Table(name = "account_pool")
 public class AccountPool {
     @Id
     @GeneratedValue
@@ -14,19 +17,10 @@ public class AccountPool {
     @JoinColumn(name = "account_pool_id")
     List<Account> accountList = new ArrayList<>();
 
-    @Column(name = "branch_code")
-    private String branchCode;
-
-    @Column(name = "currency_code")
-    private String currencyCode;
-
-    @Column(name = "mdm_code")
-    private String mdmCode;
-
-    @Column(name = "priority_code")
-    private String priorityCode;
-
-    @Column(name = "registry_type_code")
-    private String registryTypeCode;
+    private String branch_code;
+    private String currency_code;
+    private String mdm_code;
+    private String priority_code;
+    private String registry_type_code;
 
 }

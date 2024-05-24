@@ -1,29 +1,23 @@
 package ru.stepup.course2.stepuptask5.entity;
 
 import jakarta.persistence.*;
+import lombok.Data;
 
 @Entity
+@Data
+@Table(name = "tpp_product_register")
 public class TppProductRegister {
     @Id
     @GeneratedValue
     private Long id;
+    private Long product_id;
 
-    @Column(name = "product_id")
-    private Long productId;
+    @ManyToOne(fetch = FetchType.LAZY)
+//    @JoinColumn(name = "type")
+    private TppRefProductRegisterType tppRefProductRegisterType;
 
-    @ManyToOne
-    @JoinColumn(name = "type")
-    private TppRefProductRegisterType registerType;
-
-    @Column(name = "account")
     private Long account;
-
-    @Column(name = "currency_code")
-    private String currencyCode;
-
-    @Column(name = "state")
+    private String currency_code;
     private String state;
-
-    @Column(name = "account_number")
-    private String accountNumber;
+    private String account_number;
 }
