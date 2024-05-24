@@ -8,7 +8,7 @@ import lombok.Data;
 @Table(name = "account")
 public class Account {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @ManyToOne

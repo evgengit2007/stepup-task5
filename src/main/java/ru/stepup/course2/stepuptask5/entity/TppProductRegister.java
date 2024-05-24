@@ -8,7 +8,7 @@ import lombok.Data;
 @Table(name = "tpp_product_register")
 public class TppProductRegister {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private Long product_id;
 

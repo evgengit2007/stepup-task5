@@ -14,7 +14,7 @@ import java.util.List;
 @Table(name = "tpp_ref_product_register_type")
 public class TppRefProductRegisterType {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String value;

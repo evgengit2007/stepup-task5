@@ -11,12 +11,12 @@ import java.util.List;
 @Table(name = "tpp_ref_product_class")
 public class TppRefProductClass {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String value;
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    @JoinColumn(name = "product_class_code")
+//    @JoinColumn(name = "product_class_code")
     List<TppRefProductRegisterType> tppRefProductRegisterTypeList = new ArrayList<>();
 
     private String gbi_code;

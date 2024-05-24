@@ -12,10 +12,10 @@ import java.util.List;
 @Table(name = "tpp_product")
 public class TppProduct {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    @JoinColumn(name = "product_id")
+//    @JoinColumn(name = "product_id")
     List<Agreement> agreementList = new ArrayList<>();
 
     private Long product_code_id;

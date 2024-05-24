@@ -11,7 +11,7 @@ import java.util.List;
 @Table(name = "account_pool")
 public class AccountPool {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinColumn(name = "account_pool_id")
