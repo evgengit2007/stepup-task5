@@ -15,6 +15,8 @@ public class TppRefAccountType {
     private Long id;
 
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-//    @JoinColumn(name = "account_type")
+    @JoinColumn(name = "account_type", referencedColumnName = "value")
     List<TppRefProductRegisterType> tppRefProductRegisterTypeList = new ArrayList<>();
+
+    private String value;
 }

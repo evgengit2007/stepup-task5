@@ -1,34 +1,28 @@
 package ru.stepup.course2.stepuptask5.service.ProductExample.dto;
 
-import com.fasterxml.jackson.annotation.JsonInclude;
-import lombok.Data;
-import lombok.NoArgsConstructor;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
-import ru.stepup.course2.stepuptask5.service.ProductExample.model.AdditionalPropertiesVip;
-import ru.stepup.course2.stepuptask5.service.ProductExample.model.InstanceArrangement;
+import lombok.Data;
 
 import java.time.LocalDate;
 import java.util.List;
 import java.util.Map;
 
 @Data
-@NoArgsConstructor
-@JsonInclude
 public class ProdExample {
     private Long instanceId;                       // Id продукта
     @NotBlank
     private String productType;                     // Тип ЭП
     @NotBlank
-    private String productCode;                     // Код продукта в каталоге прод-в
+    private String productCode;                     // Код продукта в каталоге продуктов
     @NotBlank
     private String registerType;                    // Тип регистра
     @NotBlank
-    private String mdmCode;                         // Код кл-та(mdm)
+    private String mdmCode;                         // Код клиента(mdm)
     @NotBlank
-    private String contractNumber;                  // Номер дог-ра
+    private String contractNumber;                  // Номер договора
     @NotNull
-    private LocalDate contractDate;                 // Дата закл.дог-ра обсл.
+    private LocalDate contractDate;                 // Дата заключения договора обслуживания
     @NotNull
     private Integer priority;                       // Приоритет
     private Double interestRatePenalty;             // Штрафн. проц. ставка
@@ -41,12 +35,15 @@ public class ProdExample {
     @NotNull
     private Integer contractId;                     // Id договора
     @NotBlank
-    private String BranchCode;                      // Код филиала
+    private String branchCode;                      // Код филиала
     @NotBlank
-    private String IsoCurrencyCode;                 // Код валюты
+    private String isoCurrencyCode;                 // Код валюты
     @NotBlank
     private String urgencyCode;                     // Код срочн-ти договора
-    private Integer ReferenceCode;                  // Код точки продаж
+    private Integer referenceCode;                  // Код точки продаж
     private Map<String, List<AdditionalPropertiesVip>> additionalPropertiesVips; // массив доп. признаков
-    private List<InstanceArrangement>                  instanceArrangement; // Массив доп. соглашений
+    private List<InstanceArrangement> instanceArrangement; // Массив доп. соглашений
+
+    public ProdExample() {
+    }
 }

@@ -6,8 +6,8 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import ru.stepup.course2.stepuptask5.entity.TppProductRegister;
-import ru.stepup.course2.stepuptask5.repository.TppProductRegisterRepo;
 import ru.stepup.course2.stepuptask5.interfaces.ProdRegisterService;
+import ru.stepup.course2.stepuptask5.repository.TppProductRegisterRepo;
 import ru.stepup.course2.stepuptask5.service.ProdRegister.dto.ProdRegister;
 import ru.stepup.course2.stepuptask5.service.convertor.TppProdRegisterMapper;
 
@@ -37,6 +37,7 @@ public class ProdRegisterServiceImpl implements ProdRegisterService {
     @Override
     @Transactional
     public ProdRegister save(ProdRegister prodRegister) {
+//        System.out.println("ProdRegister save");
         return tppProdRegisterMapper.modelToDto(tppProductRegisterRepo.save(
                 tppProdRegisterMapper.dtoToModel(prodRegister)
         ));

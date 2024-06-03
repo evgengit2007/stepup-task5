@@ -1,8 +1,8 @@
-package ru.stepup.course2.stepuptask5.service.ProductExample.model;
+package ru.stepup.course2.stepuptask5.service.ProductExample.dto;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
-// Массив дополнительных признаков для сегмента КИБ
+// массив дополнительных признаков для сегмента КИБ(VIP)
 
 @Data
 @NoArgsConstructor

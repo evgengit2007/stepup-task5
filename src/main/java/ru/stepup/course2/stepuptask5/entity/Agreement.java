@@ -17,9 +17,8 @@ public class Agreement {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-//    @JoinColumn(name = "product_id")
-    private TppProduct product_id;
+    @Column(name = "product_id")
+    private Integer productId;
 
     private String general_agreement_id;
     private String supplementary_agreement_id;

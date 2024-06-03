@@ -15,7 +15,7 @@ public class TppProduct {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-//    @JoinColumn(name = "product_id")
+    @JoinColumn(name = "product_id")
     List<Agreement> agreementList = new ArrayList<>();
 
     private Long product_code_id;
@@ -23,7 +23,8 @@ public class TppProduct {
 
     @Column(name = "type")
     private String type_str;
-    private String number_str;
+    @Column(name = "number_str")
+    private String numberStr;
     private Long priority;
     private LocalDateTime date_of_conclusion;
     private LocalDateTime start_date_time;
