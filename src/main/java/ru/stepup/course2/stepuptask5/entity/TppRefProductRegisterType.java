@@ -13,7 +13,7 @@ import java.util.List;
 public class TppRefProductRegisterType {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long internal_id;
 
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinColumn(name = "type", referencedColumnName = "value")

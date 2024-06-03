@@ -29,7 +29,6 @@ public class RestController {
 
     @GetMapping("/corporate-settlement-account/get")
     public List<ProdRegister> allProdRegister() {
-        System.out.println("corporate-settlement-account/get");
         return prodRegisterService.findAll();
     }
 
@@ -42,20 +41,15 @@ public class RestController {
     // Продуктовый регистр
     @SneakyThrows
     @PostMapping(value = "/corporate-settlement-account/create", consumes = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<?> createProdRegister( @RequestBody ProdRegister prodRegister) {
-        System.out.println("prodRegister = " + prodRegister);
+    public ResponseEntity<?> createProdRegister(@RequestBody ProdRegister prodRegister) {
         makeProdRegister.setProdRegister(prodRegister);
         Object obj = makeProdRegister.createRecordProdRegister();
         return new ResponseEntity<>(obj, new HttpHeaders(), HttpStatus.CREATED);
-//        ProdRegister result = prodRegisterService.save(prodRegister);
-//        System.out.println("result = " + result);
-//        return ResponseEntity.created(new URI("/corporate-settlement-account/prodRegisters/" + result.getInstanceId()))
-//                .body(result);
     }
 
     @PutMapping("/corporate-settlement-account/{id}")
     @ResponseStatus(HttpStatus.OK)
-    public ResponseEntity<ProdRegister> updateProdRegister( @PathVariable Long id, @RequestBody ProdRegister book) {
+    public ResponseEntity<ProdRegister> updateProdRegister(@PathVariable Long id, @RequestBody ProdRegister book) {
         return ResponseEntity.ok().body(prodRegisterService.save(book));
     }
 
@@ -68,8 +62,7 @@ public class RestController {
     // Продуктовый экземпляр
     @SneakyThrows
     @PostMapping(value = "/corporate-settlement-instance/create", consumes = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<?> createTppProduct( @RequestBody ProdExample prodExample) {
-        System.out.println("prodExample = " + prodExample);
+    public ResponseEntity<?> createTppProduct(@RequestBody ProdExample prodExample) {
         makeProdExample.setProdExample(prodExample);
         Object obj = makeProdExample.createTppProduct();
         return new ResponseEntity<>(obj, new HttpHeaders(), HttpStatus.CREATED);

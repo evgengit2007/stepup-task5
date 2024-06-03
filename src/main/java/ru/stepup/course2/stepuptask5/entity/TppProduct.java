@@ -23,7 +23,7 @@ public class TppProduct {
 
     @Column(name = "type")
     private String type_str;
-    @Column(name = "number_str")
+    @Column(name = "number")
     private String numberStr;
     private Long priority;
     private LocalDateTime date_of_conclusion;

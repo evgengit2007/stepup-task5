@@ -49,7 +49,7 @@ public class CreateAgreement implements CreateRecordsInt {
                 agreement.setCancel_date(lst.getCancelDate().atStartOfDay());
             if (!(lst.getValidityDuration() == null))
                 agreement.setValidity_duration(Long.valueOf(lst.getValidityDuration()));
-            agreement.setCancelation_reason(lst.getCancellationReason());
+            agreement.setCancellation_reason(lst.getCancellationReason());
             agreement.setStatus(lst.getStatus());
             if (!(lst.getInterestCalculationDate() == null))
                 agreement.setInterest_calculation_date(lst.getInterestCalculationDate().atStartOfDay());
@@ -59,9 +59,9 @@ public class CreateAgreement implements CreateRecordsInt {
             agreement.setMinimum_interest_rate(lst.getMinimumInterestRate());
             agreement.setMinimum_interest_rate_coefficient(lst.getMaximalInterestRateCoefficient());
             agreement.setMinimum_interest_rate_coefficient_action(lst.getMinimumInterestRateCoefficientAction());
-            agreement.setMaximum_interest_rate(lst.getMaximalInterestRate());
-            agreement.setMaximum_interest_rate_coefficient(lst.getMaximalInterestRateCoefficient());
-            agreement.setMaximum_interest_rate_coefficient_action(lst.getMaximalInterestRateCoefficientAction());
+            agreement.setMaximal_interest_rate(lst.getMaximalInterestRate());
+            agreement.setMaximal_interest_rate_coefficient(lst.getMaximalInterestRateCoefficient());
+            agreement.setMaximal_interest_rate_coefficient_action(lst.getMaximalInterestRateCoefficientAction());
 //            System.out.println(agreement);
             Agreement agreementSave = agreementRepo.save(agreement);
             agreementList.add(agreementSave);

@@ -12,7 +12,7 @@ import java.util.List;
 public class TppRefAccountType {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long internal_id;
 
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinColumn(name = "account_type", referencedColumnName = "value")
