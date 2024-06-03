@@ -13,9 +13,6 @@ import ru.stepup.course2.stepuptask5.exceptions.BadReqException;
 import ru.stepup.course2.stepuptask5.exceptions.NotFoundException;
 import ru.stepup.course2.stepuptask5.repository.TppProductRegisterRepo;
 import ru.stepup.course2.stepuptask5.repository.TppProductRepo;
-import ru.stepup.course2.stepuptask5.service.ProdRegister.create.Step1;
-import ru.stepup.course2.stepuptask5.service.ProdRegister.create.Step2;
-import ru.stepup.course2.stepuptask5.service.ProdRegister.create.Step3;
 import ru.stepup.course2.stepuptask5.service.ProductExample.create.*;
 import ru.stepup.course2.stepuptask5.service.ProductExample.dto.InstanceArrangement;
 import ru.stepup.course2.stepuptask5.service.ProductExample.dto.ProdExample;
@@ -106,40 +103,36 @@ public class CreateNotNullProdExample {
     @Test
     @DisplayName("test stepPE1")
     void testStepPE1() {
-        System.out.println("testStepPE1");
         prodExample.setPriority(null);
-        Assertions.assertThrows(BadReqException.class, ()-> stepPE1.stepCheck(prodExample));
+        Assertions.assertThrows(BadReqException.class, () -> stepPE1.stepCheck(prodExample));
         prodExample.setContractNumber(null);
-        Assertions.assertThrows(BadReqException.class, ()-> stepPE1.stepCheck(prodExample));
+        Assertions.assertThrows(BadReqException.class, () -> stepPE1.stepCheck(prodExample));
     }
 
     @Test
     @DisplayName("test step2_1")
     void testStep2_1() {
-        System.out.println("testStep2_1");
-        Assertions.assertThrows(NotFoundException.class, ()-> step2_1.stepCheck(prodExample));
+        Assertions.assertThrows(NotFoundException.class, () -> step2_1.stepCheck(prodExample));
         TppProduct tppProduct = createTppProduct.addRecordTable(prodExample);
-        Assertions.assertDoesNotThrow(()-> step2_1.stepCheck(prodExample));
+        Assertions.assertDoesNotThrow(() -> step2_1.stepCheck(prodExample));
     }
 
     @Test
     @DisplayName("test step2_2")
     void testStep2_2() {
-        System.out.println("testStep2_2");
-        Assertions.assertDoesNotThrow(()-> step2_2.stepCheck(prodExample));
+        Assertions.assertDoesNotThrow(() -> step2_2.stepCheck(prodExample));
         // добавить TppProduct
         TppProduct tppProduct = createTppProduct.addRecordTable(prodExample);
         // добавить Agreement
         createAgreement.createRecsAgreement(prodExample, tppProduct);
-        Assertions.assertThrows(BadReqException.class, ()-> step2_2.stepCheck(prodExample));
+        Assertions.assertThrows(BadReqException.class, () -> step2_2.stepCheck(prodExample));
     }
 
     @Test
     @DisplayName("test step2_3")
     void testStep2_3() {
-        System.out.println("testStep2_3");
         createTppProduct.addRecordTable(prodExample);
-        Assertions.assertDoesNotThrow(()-> step2_3.stepCheck(prodExample));
+        Assertions.assertDoesNotThrow(() -> step2_3.stepCheck(prodExample));
     }
 
 }

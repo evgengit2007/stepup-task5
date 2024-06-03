@@ -8,15 +8,11 @@ import org.springframework.test.context.DynamicPropertyRegistry;
 import org.springframework.test.context.DynamicPropertySource;
 import org.testcontainers.containers.PostgreSQLContainer;
 import org.testcontainers.junit.jupiter.Container;
-import ru.stepup.course2.stepuptask5.entity.Agreement;
 import ru.stepup.course2.stepuptask5.entity.TppProduct;
 import ru.stepup.course2.stepuptask5.exceptions.BadReqException;
 import ru.stepup.course2.stepuptask5.exceptions.NotFoundException;
 import ru.stepup.course2.stepuptask5.repository.TppProductRegisterRepo;
 import ru.stepup.course2.stepuptask5.repository.TppProductRepo;
-import ru.stepup.course2.stepuptask5.service.ProdRegister.create.Step1;
-import ru.stepup.course2.stepuptask5.service.ProdRegister.create.Step2;
-import ru.stepup.course2.stepuptask5.service.ProdRegister.create.Step3;
 import ru.stepup.course2.stepuptask5.service.ProductExample.create.*;
 import ru.stepup.course2.stepuptask5.service.ProductExample.dto.InstanceArrangement;
 import ru.stepup.course2.stepuptask5.service.ProductExample.dto.ProdExample;
@@ -109,47 +105,42 @@ public class CreateNullProdExample {
     @Test
     @DisplayName("test stepPE1")
     void testStepPE1() {
-        System.out.println("testStepPE1");
         prodExample.setPriority(null);
-        Assertions.assertThrows(BadReqException.class, ()-> stepPE1.stepCheck(prodExample));
+        Assertions.assertThrows(BadReqException.class, () -> stepPE1.stepCheck(prodExample));
         prodExample.setContractNumber(null);
-        Assertions.assertThrows(BadReqException.class, ()-> stepPE1.stepCheck(prodExample));
+        Assertions.assertThrows(BadReqException.class, () -> stepPE1.stepCheck(prodExample));
     }
 
     @Test
     @DisplayName("test step1_1")
     void testStep1_1() {
-        System.out.println("testStep1_1");
-        Assertions.assertDoesNotThrow(()-> step1_1.stepCheck(prodExample));
+        Assertions.assertDoesNotThrow(() -> step1_1.stepCheck(prodExample));
         createTppProduct.addRecordTable(prodExample);
-        Assertions.assertThrows(BadReqException.class, ()-> step1_1.stepCheck(prodExample));
+        Assertions.assertThrows(BadReqException.class, () -> step1_1.stepCheck(prodExample));
     }
 
     @Test
     @DisplayName("test step1_2")
     void testStep1_2() {
-        System.out.println("testStep1_2");
-        Assertions.assertDoesNotThrow(()-> step1_2.stepCheck(prodExample));
+        Assertions.assertDoesNotThrow(() -> step1_2.stepCheck(prodExample));
         // добавить TppProduct
         TppProduct tppProduct = createTppProduct.addRecordTable(prodExample);
         // добавить Agreement
         createAgreement.createRecsAgreement(prodExample, tppProduct);
-        Assertions.assertThrows(BadReqException.class, ()-> step1_2.stepCheck(prodExample));
+        Assertions.assertThrows(BadReqException.class, () -> step1_2.stepCheck(prodExample));
     }
 
     @Test
     @DisplayName("test step1_3")
     void testStep1_3() {
-        System.out.println("testStep1_3");
-        Assertions.assertDoesNotThrow(()-> step1_3.stepCheck(prodExample));
+        Assertions.assertDoesNotThrow(() -> step1_3.stepCheck(prodExample));
         prodExample.setProductCode("03.012.222"); // ставим значение, отсутствующее в БД
-        Assertions.assertThrows(NotFoundException.class, ()-> step1_3.stepCheck(prodExample));
+        Assertions.assertThrows(NotFoundException.class, () -> step1_3.stepCheck(prodExample));
     }
 
     @Test
     @DisplayName("test step1_4")
     void testStep1_4() {
-        System.out.println("testStep1_4");
-        Assertions.assertDoesNotThrow(()-> step1_4.stepCheck(prodExample));
+        Assertions.assertDoesNotThrow(() -> step1_4.stepCheck(prodExample));
     }
 }
