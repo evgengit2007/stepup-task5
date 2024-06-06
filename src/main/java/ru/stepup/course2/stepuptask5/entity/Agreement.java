@@ -17,9 +17,8 @@ public class Agreement {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-//    @JoinColumn(name = "product_id")
-    private TppProduct product_id;
+    @Column(name = "product_id")
+    private Integer productId;
 
     private String general_agreement_id;
     private String supplementary_agreement_id;
@@ -30,7 +29,7 @@ public class Agreement {
     private LocalDateTime closing_date;
     private LocalDateTime cancel_date;
     private Long validity_duration;
-    private String cancelation_reason;
+    private String cancellation_reason;
     private String status;
     private LocalDateTime interest_calculation_date;
     private Double interest_rate;
@@ -39,7 +38,7 @@ public class Agreement {
     private Double minimum_interest_rate;
     private Double minimum_interest_rate_coefficient;
     private String minimum_interest_rate_coefficient_action;
-    private Double maximum_interest_rate;
-    private Double maximum_interest_rate_coefficient;
-    private String maximum_interest_rate_coefficient_action;
+    private Double maximal_interest_rate;
+    private Double maximal_interest_rate_coefficient;
+    private String maximal_interest_rate_coefficient_action;
 }

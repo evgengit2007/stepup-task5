@@ -12,12 +12,13 @@ import java.util.List;
 public class TppRefProductClass {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long internal_id;
+
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @JoinColumn(name = "product_class_code", referencedColumnName = "value")
+    List<TppRefProductRegisterType> tppRefProductRegisterTypeList = new ArrayList<>();
 
     private String value;
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-//    @JoinColumn(name = "product_class_code")
-    List<TppRefProductRegisterType> tppRefProductRegisterTypeList = new ArrayList<>();
 
     private String gbi_code;
     private String gbi_name;

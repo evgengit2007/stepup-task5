@@ -10,14 +10,15 @@ public class TppProductRegister {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private Long product_id;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-//    @JoinColumn(name = "type")
-    private TppRefProductRegisterType tppRefProductRegisterType;
+    @Column(name = "product_id")
+    private Long productId;
 
+    private String type;
     private Long account;
     private String currency_code;
     private String state;
-    private String account_number;
+
+    @Column(name = "account_number")
+    private String accountNumber;
 }

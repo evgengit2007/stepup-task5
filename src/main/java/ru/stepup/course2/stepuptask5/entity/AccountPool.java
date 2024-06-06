@@ -17,10 +17,15 @@ public class AccountPool {
     @JoinColumn(name = "account_pool_id")
     List<Account> accountList = new ArrayList<>();
 
-    private String branch_code;
-    private String currency_code;
-    private String mdm_code;
-    private String priority_code;
-    private String registry_type_code;
+    @Column(name = "branch_code")
+    private String branchCode;
+    @Column(name = "currency_code")
+    private String currencyCode;
+    @Column(name = "mdm_code")
+    private String mdmCode;
+    @Column(name = "priority_code")
+    private String priorityCode;
+    @Column(name = "registry_type_code")
+    private String registryTypeCode;
 
 }

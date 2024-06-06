@@ -1,0 +1,88 @@
+    {
+        "instanceId": 1,
+        "productType": "НСО",
+        "productCode": "03.012.002",
+        "registerType": "03.012.002_47533_ComSoLd",
+        "mdmCode": "15",
+        "contractNumber": "148/FK",
+        "contractDate": "2024-01-01T00:00:00.001Z",
+        "priority": "1",
+        "interestRatePenalty": "0.01",
+        "minimalBalance": "20000.00",
+        "thresholdAmount": "100000.00",
+        "accountingDetails": "REKV VYPLATA",
+        "rateType": "0",
+        "taxPercentageRate": "2.1",
+        "technicalOverdraftLimitAmount": "10000.00",
+        "contractId": "4",
+        "BranchCode": "0022",
+        "IsoCurrencyCode": "800",
+        "urgencyCode": "00",
+        "ReferenceCode": "11",
+        "additionalPropertiesVip":
+            {
+	            "data": 
+                [ 
+    	            { 
+	                    "key": " RailwayRegionOwn", 
+	                    "value": "ABC", 
+	                    "name": "Регион принадлежности железной дороги" 
+                    }, 
+	                { 
+    	                "key": "counter",
+                        "value": "123", 
+	                    "name": "Счетчик" 
+                    }           
+                ]       
+            },
+        "instanceArrangement":
+            [
+                {
+                    "generalAgreementId": "11",
+                    "supplementaryAgreementId": "22",
+                    "arrangementType": "НСО",
+                    "shedulerJobId": 777,
+                    "number": "123/RT",
+                    "openingDate": "2024-02-01T00:00:00.001Z",
+                    "closingDate": "2024-05-01T00:00:00.001Z",
+                    "cancelDate": "2024-04-01T00:00:00.001Z",
+                    "validityDuration": 30,
+                    "cancellationReason": "Reason cancellation",
+                    "status": "Открыт",
+                    "interestCalculationDate": "2024-05-04T00:00:00.001Z",
+                    "interestRate": 2.5,
+                    "coefficient": 1.25,
+                    "coefficientAction": "Aplly before 01.01.2025",
+                    "minimumInterestRate": 0.01,
+                    "minimumInterestRateCoefficient": 0.05,
+                    "minimumInterestRateCoefficientAction": "Action by Min Rate Coeff",
+                    "maximalInterestRate": 0.05,
+                    "maximalInterestRateCoefficient": 1.20,
+                    "maximalInterestRateCoefficientAction": "Action by Max Rate Coeff"
+                },
+                {
+                    "generalAgreementId": "33",
+                    "supplementaryAgreementId": "44",
+                    "arrangementType": "СМО",
+                    "shedulerJobId": 888,
+                    "number": "456/RT",
+                    "openingDate": "2023-02-01T00:00:00.001Z",
+                    "closingDate": "2023-05-01T00:00:00.001Z",
+                    "cancelDate": "2023-06-01T00:00:00.001Z",
+                    "validityDuration": 40,
+                    "cancellationReason": "Reason cancellation",
+                    "status": "Открыт",
+                    "interestCalculationDate": "2023-05-04T00:00:00.001Z",
+                    "interestRate": 3.5,
+                    "coefficient": 2.25,
+                    "coefficientAction": "Aplly before 01.07.2025",
+                    "minimumInterestRate": 0.15,
+                    "minimumInterestRateCoefficient": 0.08,
+                    "minimumInterestRateCoefficientAction": "Action by Min Rate Coeff",
+                    "maximalInterestRate": 0.09,
+                    "maximalInterestRateCoefficient": 1.40,
+                    "maximalInterestRateCoefficientAction": "Action by Max Rate Coeff"
+                }
+            ]
+
+    }
