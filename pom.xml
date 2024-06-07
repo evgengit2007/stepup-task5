@@ -19,6 +19,7 @@
 		<lombok-mapstruct-binding.version>0.2.0</lombok-mapstruct-binding.version>
 		<maven.compiler.plugin.version>3.5.1</maven.compiler.plugin.version>
 		<testcontainers.version>1.19.8</testcontainers.version>
+		<jakarta.validation>3.0.2</jakarta.validation>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -88,7 +89,7 @@
 		<dependency>
 			<groupId>jakarta.validation</groupId>
 			<artifactId>jakarta.validation-api</artifactId>
-			<version>3.0.2</version>
+			<version>${jakarta.validation}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.hibernate</groupId>
